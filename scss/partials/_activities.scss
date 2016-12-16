@@ -2,5 +2,51 @@
   position: relative;
   height: auto;
   width: 100%;
-  background-color: $background;
+  .activity-tile {
+    position: relative;
+    height: 450px;
+    width: 90%;
+    margin: 5%;
+    background: center center no-repeat;
+    background-size: cover;
+    .activity-icon {
+      display: block;
+      position: absolute;
+      @include full-center;
+      height: 60px;
+      .icon-back {
+        position: absolute;
+        @include full-center;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background: #444444;
+        opacity: .6;
+      }
+      img {
+        position: absolute;
+        @include full-center;
+        height: 35px;
+      }
+    }
+    .activity-text {
+      position: absolute;
+      left: 40px;
+      bottom: 40px;
+      .activity-bar {
+        height: 5px;
+        width: 30px;
+        background: $highlight;
+      }
+      h3 {
+        font-size: 1.2em;
+        margin: 0;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+#rafting {
+  background-image: url("http://arcticwild.com/wp-content/themes/arcticwild/assets/img/trips/home-raft.jpg");
 }

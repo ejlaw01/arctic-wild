@@ -15,13 +15,23 @@
 
 .nav {
   display: flex;
+  justify-content: space-between;
   position: relative;
   .logo {
     position: relative;
+    margin: 20px;
+    padding: 20px;
+    width: 130px;
     img {
+      position: absolute;
+      @include vertical-center;
+      left: 0;
       height: 40px;
     }
     h4 {
+      position: absolute;
+      @include vertical-center;
+      right: 0;
     }
   }
   ul {
@@ -31,8 +41,8 @@
     list-style: none;
     li {
       position: relative;
-      flex-grow: 1;
-      padding: 20px 30px;
+      align-self: center;
+      padding: 0px 20px;
       color: white;
       h3 {
         float: left;
@@ -47,32 +57,49 @@
       }
     }
   }
+  .menu-burger {
+    height: 16px;
+    width: 30px;
+    margin: 25px;
+    .burger-bar {
+      height: 2px;
+      margin: 5px 0;
+      background: white;
+    }
+  }
   @media screen and (max-width: 960px){
     ul {
       display: none;
     }
-    .menu-bar {
+    .menu-burger {
       display: inline-block;
     }
   }
 }
 
 .title {
-  position: absolute;
-  @include full-center;
+  position: relative;
+  margin: 8% auto;
   width: 100%;
   text-align: center;
-  img {
-    height: 20px;
+  #alaska {
+    height: 80px;
     width: auto;
+    margin: 10px auto;
+  }
+  .bottom-bar {
+    height: 5px;
+    width: 250px;
+    margin: 25px auto;
+    background: white;
   }
 }
 
 .press-play {
-  position: absolute;
-  @include horizontal-center;
-  bottom: 5%;
+  position: relative;
+  margin: 0 auto;
   .button-back {
+    margin: 0 auto;
     height: 100px;
     width:100px;
     border-radius: 50%;
@@ -83,6 +110,7 @@
     position: absolute;
     @include full-center;
     padding-left: 10px;
+    height: 40%;
   }
 }
 
@@ -100,5 +128,8 @@
     text-align: center;
     width: 100%;
     margin: 0;
+  }
+  @media screen and (min-width: 960px) {
+    display: block;
   }
 }

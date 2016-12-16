@@ -52,16 +52,28 @@ h1 {
   font-family: 'Cormorant Infant', serif;
   font-size: 5em;
   margin: 10px; }
+  @media screen and (max-width: 750px) {
+    h1 {
+      font-size: 3.5em; } }
+  @media screen and (min-width: 960px) {
+    h1 {
+      font-size: 7em; } }
 
 h2 {
   font-family: 'Fjalla One', sans-serif;
   font-size: 1.2em;
   letter-spacing: 4px; }
+  @media screen and (max-width: 750px) {
+    h2 {
+      font-size: .85em; } }
+  @media screen and (min-width: 960px) {
+    h2 {
+      letter-spacing: 4px; } }
 
 h3 {
   font-family: 'Fjalla One', sans-serif;
   font-size: .9em;
-  margin: 15px;
+  margin: 5px;
   letter-spacing: 2px; }
 
 h4 {
@@ -95,11 +107,24 @@ body {
 
 .nav {
   display: flex;
+  justify-content: space-between;
   position: relative; }
   .nav .logo {
-    position: relative; }
+    position: relative;
+    margin: 20px;
+    padding: 20px;
+    width: 130px; }
     .nav .logo img {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 0;
       height: 40px; }
+    .nav .logo h4 {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      right: 0; }
   .nav ul {
     display: flex;
     justify-content: space-between;
@@ -107,8 +132,8 @@ body {
     list-style: none; }
     .nav ul li {
       position: relative;
-      flex-grow: 1;
-      padding: 20px 30px;
+      align-self: center;
+      padding: 0px 20px;
       color: white; }
       .nav ul li h3 {
         float: left; }
@@ -119,29 +144,40 @@ body {
         .nav ul li img#logo {
           position: relative;
           float: left; }
+  .nav .menu-burger {
+    height: 16px;
+    width: 30px;
+    margin: 25px; }
+    .nav .menu-burger .burger-bar {
+      height: 2px;
+      margin: 5px 0;
+      background: white; }
   @media screen and (max-width: 960px) {
     .nav ul {
       display: none; }
-    .nav .menu-bar {
+    .nav .menu-burger {
       display: inline-block; } }
 
 .title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin: 8% auto;
   width: 100%;
   text-align: center; }
-  .title img {
-    height: 20px;
-    width: auto; }
+  .title #alaska {
+    height: 80px;
+    width: auto;
+    margin: 10px auto; }
+  .title .bottom-bar {
+    height: 5px;
+    width: 250px;
+    margin: 25px auto;
+    background: white; }
 
 .press-play {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  bottom: 5%; }
+  position: relative;
+  margin: 0 auto; }
   .press-play .button-back {
+    margin: 0 auto;
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -152,7 +188,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding-left: 10px; }
+    padding-left: 10px;
+    height: 40%; }
 
 .scroll-prompt {
   position: absolute;
@@ -170,11 +207,58 @@ body {
     text-align: center;
     width: 100%;
     margin: 0; }
+  @media screen and (min-width: 960px) {
+    .scroll-prompt {
+      display: block; } }
 
 .activities {
   position: relative;
   height: auto;
-  width: 100%;
-  background-color: #D1D1C9; }
+  width: 100%; }
+  .activities .activity-tile {
+    position: relative;
+    height: 450px;
+    width: 90%;
+    margin: 5%;
+    background: center center no-repeat;
+    background-size: cover; }
+    .activities .activity-tile .activity-icon {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 60px; }
+      .activities .activity-tile .activity-icon .icon-back {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background: #444444;
+        opacity: .6; }
+      .activities .activity-tile .activity-icon img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 35px; }
+    .activities .activity-tile .activity-text {
+      position: absolute;
+      left: 40px;
+      bottom: 40px; }
+      .activities .activity-tile .activity-text .activity-bar {
+        height: 5px;
+        width: 30px;
+        background: #DC7725; }
+      .activities .activity-tile .activity-text h3 {
+        font-size: 1.2em;
+        margin: 0;
+        margin-top: 15px; }
+
+#rafting {
+  background-image: url("http://arcticwild.com/wp-content/themes/arcticwild/assets/img/trips/home-raft.jpg"); }
 
 /*# sourceMappingURL=main.css.map */
