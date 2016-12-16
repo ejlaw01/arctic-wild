@@ -1,22 +1,58 @@
+.hidden {
+  display: none;
+}
+
 .hero {
   position: relative;
-  height: 100vh;
+  height: 500px;
   width: 100%;
-  @include background-image("../img/splash.jpg");
-  &::before {
-    @include filter-position;
-    background: linear-gradient(to bottom, white, black);
-    opacity: .7;
-    }
+  background: url("../img/hero-slide1.jpg") top center no-repeat;
+  background-size: cover;
+  @media screen and (min-width: 960px) {
+    height: 100vh;
   }
+}
 
 .nav {
+  display: flex;
+  position: relative;
+  .logo {
+    position: relative;
+    img {
+      height: 40px;
+    }
+    h4 {
+    }
+  }
   ul {
     display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     list-style: none;
     li {
+      position: relative;
+      flex-grow: 1;
       padding: 20px 30px;
       color: white;
+      h3 {
+        float: left;
+      }
+      img {
+        position: absolute;
+        @include vertical-center;
+        &#logo {
+          position: relative;
+          float: left;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 960px){
+    ul {
+      display: none;
+    }
+    .menu-bar {
+      display: inline-block;
     }
   }
 }
@@ -32,9 +68,37 @@
   }
 }
 
-.down-arrow img {
+.press-play {
   position: absolute;
   @include horizontal-center;
   bottom: 5%;
-  height: 50px;
+  .button-back {
+    height: 100px;
+    width:100px;
+    border-radius: 50%;
+    background: white;
+    opacity: .5;
+  }
+  img {
+    position: absolute;
+    @include full-center;
+    padding-left: 10px;
+  }
+}
+
+.scroll-prompt {
+  position: absolute;
+  @include horizontal-center;
+  bottom: 30px;
+  height: 60px;
+  width: 170px;
+  background: $highlight;
+  border-radius: 7px;
+  h3 {
+    position: absolute;
+    @include vertical-center;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
 }

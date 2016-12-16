@@ -6,24 +6,15 @@
 @import "modules/_mixins.scss";
 @import "modules/_variables.scss";
 
-@import "partials/_typography";
+@import "partials/_typography.scss";
 
 body {
   box-sizing: border-box;
-  background-color: $black;
+  background-color: $background;
   color: $white;
   &::-webkit-scrollbar {
     display: none;
   }
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.static-elements {
-  display: none;
 }
 
 @import "partials/_hero.scss";
