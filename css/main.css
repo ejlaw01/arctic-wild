@@ -174,8 +174,12 @@ body {
     background: white; }
 
 .press-play {
+  display: inline-block;
   position: relative;
-  margin: 0 auto; }
+  margin: 0 auto;
+  transition: all .2s linear; }
+  .press-play:hover {
+    transform: scale(1.15); }
   .press-play .button-back {
     margin: 0 auto;
     height: 100px;
@@ -183,6 +187,9 @@ body {
     border-radius: 50%;
     background: white;
     opacity: .5; }
+    .press-play .button-back:hover {
+      opacity: .7;
+      z-index: 1; }
   .press-play img {
     position: absolute;
     top: 50%;
@@ -212,51 +219,66 @@ body {
       display: block; } }
 
 .activities {
-  position: relative;
-  height: auto;
-  width: 100%; }
-  .activities .activity-tile {
-    position: relative;
-    height: 450px;
-    width: 90%;
-    margin: 5%;
-    background: center center no-repeat;
-    background-size: cover; }
-    .activities .activity-tile .activity-icon {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: 60px; }
-      .activities .activity-tile .activity-icon .icon-back {
+  position: relative; }
+  .activities .row {
+    width: 100%; }
+    @media screen and (min-width: 750px) {
+      .activities .row {
+        display: flex;
+        flex-wrap: wrap; } }
+    @media screen and (min-width: 960px) {
+      .activities .row {
+        flex-wrap: nowrap; } }
+    .activities .row .activity-tile {
+      position: relative;
+      height: 450px;
+      width: 90%;
+      margin: 5%;
+      background: center center no-repeat;
+      background-size: cover; }
+      @media screen and (min-width: 750px) {
+        .activities .row .activity-tile {
+          width: 50%;
+          margin: 0; }
+          .activities .row .activity-tile.big {
+            flex-grow: 2; }
+          .activities .row .activity-tile.small {
+            flex-grow: 1; } }
+      .activities .row .activity-tile .activity-icon {
+        display: block;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        background: #444444;
-        opacity: .6; }
-      .activities .activity-tile .activity-icon img {
+        height: 60px; }
+        .activities .row .activity-tile .activity-icon .icon-back {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 60px;
+          width: 60px;
+          border-radius: 50%;
+          background: #444444;
+          opacity: .6; }
+        .activities .row .activity-tile .activity-icon img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 35px; }
+      .activities .row .activity-tile .activity-text {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 35px; }
-    .activities .activity-tile .activity-text {
-      position: absolute;
-      left: 40px;
-      bottom: 40px; }
-      .activities .activity-tile .activity-text .activity-bar {
-        height: 5px;
-        width: 30px;
-        background: #DC7725; }
-      .activities .activity-tile .activity-text h3 {
-        font-size: 1.2em;
-        margin: 0;
-        margin-top: 15px; }
+        left: 40px;
+        bottom: 40px; }
+        .activities .row .activity-tile .activity-text .activity-bar {
+          height: 5px;
+          width: 30px;
+          background: #DC7725; }
+        .activities .row .activity-tile .activity-text h3 {
+          font-size: 1.2em;
+          margin: 0;
+          margin-top: 15px; }
 
 #rafting {
   background-image: url("http://arcticwild.com/wp-content/themes/arcticwild/assets/img/trips/home-raft.jpg"); }
